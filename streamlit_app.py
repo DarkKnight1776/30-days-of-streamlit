@@ -8,8 +8,8 @@ st.code("""
 [theme]
 primaryColor="#F39C12"
 backgroundColor="#2E86C1"
-secondaryBackgroundColor="#AED6F1"
-textColor="#FFFFFF"
+secondaryBackgroundColor="C60AF0"
+textColor="#F0300A"
 font="monospace"
 """)
 
