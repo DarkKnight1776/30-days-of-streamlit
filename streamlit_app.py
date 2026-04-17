@@ -1,36 +1,11 @@
 import streamlit as st
+import pandas as pd
+import pandas_profiling
+from streamlit_pandas_profiling import st_profile_report
 
-st.header('st.seleectbox')
+st.header('`streamlit_pandas_profiling`')
 
-option = st.selectbox(
-    'What is your favorite color?',
-    ('Blue', 'Red', 'Green'))
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
 
-st.write('Your favorite color is', option)
-
-st.header('st.multiselect')
-
-options = st.multiselect(
-    'What are your favorite colors?',
-    ['Green', 'Yellow', 'Red', 'Blue'],
-    ['Yellow', 'Red'])
-
-st.write('You selected:', options)
-
-st.header('st.checkbox')
-
-st.write('What would you like to order?')
-
-icecream = st.checkbox('Ice cream')
-coffee = st.checkbox('Coffee')
-cola = st.checkbox('Cola')
-
-if icecream:
-    st.write("Great! Here's your ice cream.")
-
-if coffee:
-    st.write("Great! Here's your coffee.")
-
-if cola:
-    st.write("Great! Here's your cola.")
-
+pr = df.profile_report()
+st_profile_report(pr)
