@@ -7,7 +7,7 @@ st.subheader('Input CSV')
 uploaded_file = st.file_uploader('Choose a file')
 
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(uploaded_file, encoding='ISO-8859-1')
     st.subheader('DataFrame')
     st.write(df)
     st.subheader('Descriptive Statistics')
